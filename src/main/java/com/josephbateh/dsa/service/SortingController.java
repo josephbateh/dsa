@@ -23,6 +23,6 @@ public class SortingController {
 
     log.info("Sorting with bubble sort");
 
-    return new ResponseEntity<>(HttpStatus.OK);
+    return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
   }
 }
