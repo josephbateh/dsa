@@ -1,6 +1,7 @@
 package com.josephbateh.dsa.service;
 
 import com.josephbateh.dsa.domain.sorting.algorithms.BubbleSort;
+import com.josephbateh.dsa.domain.sorting.algorithms.InsertionSort;
 import com.josephbateh.dsa.service.resources.SortRequest;
 import com.josephbateh.dsa.service.resources.SortResponse;
 import org.slf4j.Logger;
@@ -19,7 +20,16 @@ public class SortingController {
   public SortResponse bubble(@RequestBody SortRequest request) {
     log.info("Sorting {} integers with bubble sort", request.getList().size());
     SortResponse response = BubbleSort.sort(request.getList());
-    log.info("Completed sorting {} integers with bubble sort in {} nanoseconds", request.getList().size(),   response.getNanoDuration());
+    log.info("Completed sorting {} integers with bubble sort in {} nanoseconds", request.getList().size(), response.getNanoDuration());
     return BubbleSort.sort(request.getList());
+  }
+
+  @RequestMapping(method = RequestMethod.POST, value = "/insertion")
+  @ResponseStatus(value = HttpStatus.OK)
+  public SortResponse insertion(@RequestBody SortRequest request) {
+    log.info("Sorting {} integers with insertion sort", request.getList().size());
+    SortResponse response = BubbleSort.sort(request.getList());
+    log.info("Completed sorting {} integers with insertion sort in {} nanoseconds", request.getList().size(), response.getNanoDuration());
+    return InsertionSort.sort(request.getList());
   }
 }

@@ -9,5 +9,5 @@ import java.util.List;
 @Getter
 public class SortResponse {
   long nanoDuration;
-  List<Integer> list;
+  List<Integer> result;
 }
