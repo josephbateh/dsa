@@ -8,21 +8,24 @@ import java.util.stream.Collectors;
 
 public class BubbleSort {
   public static SortResponse sort(List<Integer> list) {
-    int[] arr = list.stream().mapToInt(i -> i).toArray();
-    int n = arr.length;
+    int[] listArray = list.stream().mapToInt(i -> i).toArray();
+    int arrayLength = listArray.length;
     long startTime = System.nanoTime();
-    for (int i = 0; i < n - 1; i++) {
-      for (int j = 0; j < n - i - 1; j++) {
-        if (arr[j] > arr[j + 1]) {
-          int temp = arr[j];
-          arr[j] = arr[j + 1];
-          arr[j + 1] = temp;
+
+    for (int currentIndex = 0; currentIndex < arrayLength - 1; currentIndex++) {
+      for (int previousIndex = 0; previousIndex < arrayLength - currentIndex - 1; previousIndex++) {
+        // If previous element is greater than current element, swap
+        if (listArray[previousIndex] > listArray[previousIndex + 1]) {
+          int previousElement = listArray[previousIndex];
+          listArray[previousIndex] = listArray[previousIndex + 1];
+          listArray[previousIndex + 1] = previousElement;
         }
       }
     }
+
     long endTime = System.nanoTime();
     long duration = endTime - startTime;
-    List<Integer> responseList = Arrays.stream(arr).boxed().collect(Collectors.toList());
+    List<Integer> responseList = Arrays.stream(listArray).boxed().collect(Collectors.toList());
     return new SortResponse(duration, responseList);
   }
 }
