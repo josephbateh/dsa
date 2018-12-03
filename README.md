@@ -4,8 +4,8 @@ Practice app for keeping up with data structures and algorithms.
 
 ## Deployments
 
-- [Staging](https://dsa-stage.herokuapp.com/)
-- [Production](https://dsa-prod.herokuapp.com/)
+- Staging: https://dsa-stage.herokuapp.com/
+- Production https://dsa-prod.herokuapp.com/
 
 ## Example
 
