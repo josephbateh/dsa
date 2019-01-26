@@ -1,5 +1,6 @@
 package com.josephbateh.dsa.domain.sorting.algorithms;
 
+import com.josephbateh.dsa.helpers.Timer;
 import com.josephbateh.dsa.service.resources.SortResponse;
 
 import java.util.Arrays;
@@ -10,7 +11,10 @@ public class InsertionSort {
   public static SortResponse sort(List<Integer> list) {
     int[] listArray = list.stream().mapToInt(i -> i).toArray();
     int arrayLength = listArray.length;
-    long startTime = System.nanoTime();
+
+    Timer timer = new Timer();
+    timer.start();
+
     for (int index = 1; index < arrayLength; ++index) {
       // Current location in array
       int currentElement = listArray[index];
@@ -27,8 +31,8 @@ public class InsertionSort {
       // Store current element in open space
       listArray[previousElement + 1] = currentElement;
     }
-    long endTime = System.nanoTime();
-    long duration = endTime - startTime;
+
+    long duration = timer.stop();
     List<Integer> responseList = Arrays.stream(listArray).boxed().collect(Collectors.toList());
     return new SortResponse(duration, responseList);
   }
