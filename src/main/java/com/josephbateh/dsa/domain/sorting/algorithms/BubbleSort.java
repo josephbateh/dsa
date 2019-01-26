@@ -1,5 +1,6 @@
 package com.josephbateh.dsa.domain.sorting.algorithms;
 
+import com.josephbateh.dsa.helpers.Timer;
 import com.josephbateh.dsa.service.resources.SortResponse;
 
 import java.util.Arrays;
@@ -10,7 +11,9 @@ public class BubbleSort {
   public static SortResponse sort(List<Integer> list) {
     int[] listArray = list.stream().mapToInt(i -> i).toArray();
     int arrayLength = listArray.length;
-    long startTime = System.nanoTime();
+
+    Timer timer = new Timer();
+    timer.start();
 
     for (int currentIndex = 0; currentIndex < arrayLength - 1; currentIndex++) {
       for (int previousIndex = 0; previousIndex < arrayLength - currentIndex - 1; previousIndex++) {
@@ -23,8 +26,7 @@ public class BubbleSort {
       }
     }
 
-    long endTime = System.nanoTime();
-    long duration = endTime - startTime;
+    long duration = timer.stop();
     List<Integer> responseList = Arrays.stream(listArray).boxed().collect(Collectors.toList());
     return new SortResponse(duration, responseList);
   }
