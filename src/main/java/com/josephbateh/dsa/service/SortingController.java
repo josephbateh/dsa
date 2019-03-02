@@ -1,6 +1,7 @@
 package com.josephbateh.dsa.service;
 
 import com.josephbateh.dsa.domain.sorting.algorithms.BubbleSort;
+import com.josephbateh.dsa.domain.sorting.algorithms.MergeSort;
 import com.josephbateh.dsa.domain.sorting.algorithms.SelectionSort;
 import com.josephbateh.dsa.service.resources.SortRequest;
 import com.josephbateh.dsa.service.resources.SortResponse;
@@ -39,6 +40,15 @@ public class SortingController {
     log.info("Sorting {} integers with selection sort", request.getList().size());
     SortResponse response = SelectionSort.sort(request.getList());
     log.info("Completed sorting {} integers with selection sort in {} nanoseconds", request.getList().size(), response.getNanoDuration());
+    return response;
+  }
+
+  @RequestMapping(method = RequestMethod.POST, value = "/merge")
+  @ResponseStatus(value = HttpStatus.OK)
+  public SortResponse merge(@RequestBody SortRequest request) {
+    log.info("Sorting {} integers with merge sort", request.getList().size());
+    SortResponse response = MergeSort.sort(request.getList());
+    log.info("Completed sorting {} integers with merge sort in {} nanoseconds", request.getList().size(), response.getNanoDuration());
     return response;
   }
 }
