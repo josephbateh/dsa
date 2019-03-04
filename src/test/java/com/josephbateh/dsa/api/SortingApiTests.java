@@ -15,7 +15,7 @@ class SortingApiTests extends BaseApiTest {
   private List<Integer> list = Arrays.asList(-1, 0, 1);
 
   @Test
-  void testBubbleSortReturnsWithCorrectValues() {
+  void testBubbleSortReturnsWithSortedValues() {
     SortRequest sortRequest = new SortRequest(list);
 
     given()
@@ -29,7 +29,7 @@ class SortingApiTests extends BaseApiTest {
   }
 
   @Test
-  void testInsertionSortReturnsWithCorrectValues() {
+  void testInsertionSortReturnsWithSortedValues() {
     SortRequest sortRequest = new SortRequest(list);
 
     given()
@@ -43,7 +43,7 @@ class SortingApiTests extends BaseApiTest {
   }
 
   @Test
-  void testMergeSortReturnsWithCorrectValues() {
+  void testMergeSortReturnsWithSortedValues() {
     SortRequest sortRequest = new SortRequest(list);
 
     given()
@@ -57,7 +57,7 @@ class SortingApiTests extends BaseApiTest {
   }
 
   @Test
-  void testSelectionSortReturnsWithCorrectValues() {
+  void testSelectionSortReturnsWithSortedValues() {
     SortRequest sortRequest = new SortRequest(list);
 
     given()
