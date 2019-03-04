@@ -1,9 +1,9 @@
 package com.josephbateh.dsa.unit;
 
-import com.josephbateh.dsa.domain.sorting.algorithms.BubbleSort;
-import com.josephbateh.dsa.domain.sorting.algorithms.InsertionSort;
-import com.josephbateh.dsa.domain.sorting.algorithms.MergeSort;
-import com.josephbateh.dsa.domain.sorting.algorithms.SelectionSort;
+import com.josephbateh.dsa.domain.sorting.BubbleSort;
+import com.josephbateh.dsa.domain.sorting.InsertionSort;
+import com.josephbateh.dsa.domain.sorting.MergeSort;
+import com.josephbateh.dsa.domain.sorting.SelectionSort;
 import com.josephbateh.dsa.helpers.RandomGenerator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

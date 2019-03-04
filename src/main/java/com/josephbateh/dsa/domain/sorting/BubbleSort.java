@@ -1,4 +1,4 @@
-package com.josephbateh.dsa.domain.sorting.algorithms;
+package com.josephbateh.dsa.domain.sorting;
 
 import com.josephbateh.dsa.helpers.Timer;
 import com.josephbateh.dsa.service.resources.SortResponse;

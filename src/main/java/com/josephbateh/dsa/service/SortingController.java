@@ -1,8 +1,8 @@
 package com.josephbateh.dsa.service;
 
-import com.josephbateh.dsa.domain.sorting.algorithms.BubbleSort;
-import com.josephbateh.dsa.domain.sorting.algorithms.MergeSort;
-import com.josephbateh.dsa.domain.sorting.algorithms.SelectionSort;
+import com.josephbateh.dsa.domain.sorting.BubbleSort;
+import com.josephbateh.dsa.domain.sorting.MergeSort;
+import com.josephbateh.dsa.domain.sorting.SelectionSort;
 import com.josephbateh.dsa.service.resources.SortRequest;
 import com.josephbateh.dsa.service.resources.SortResponse;
 import org.slf4j.Logger;
