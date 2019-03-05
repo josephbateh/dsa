@@ -1,11 +1,9 @@
 package com.josephbateh.dsa.unit;
 
-import com.josephbateh.dsa.domain.sorting.BubbleSort;
-import com.josephbateh.dsa.domain.sorting.InsertionSort;
-import com.josephbateh.dsa.domain.sorting.MergeSort;
-import com.josephbateh.dsa.domain.sorting.SelectionSort;
+import com.josephbateh.dsa.domain.sorting.*;
 import com.josephbateh.dsa.helpers.RandomGenerator;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -47,6 +45,13 @@ class SortingAlgorithmTests {
   @Test
   void testInsertionSort() {
     List<Integer> actualList = InsertionSort.sort(list).getResult();
+    assertEquals(expectedList, actualList);
+  }
+
+  @Test
+  @Disabled
+  void testQuickSort() {
+    List<Integer> actualList = QuickSort.sort(list).getResult();
     assertEquals(expectedList, actualList);
   }
 }

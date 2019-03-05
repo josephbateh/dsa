@@ -2,6 +2,7 @@ package com.josephbateh.dsa.service;
 
 import com.josephbateh.dsa.domain.sorting.BubbleSort;
 import com.josephbateh.dsa.domain.sorting.MergeSort;
+import com.josephbateh.dsa.domain.sorting.QuickSort;
 import com.josephbateh.dsa.domain.sorting.SelectionSort;
 import com.josephbateh.dsa.service.resources.SortRequest;
 import com.josephbateh.dsa.service.resources.SortResponse;
@@ -9,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -50,5 +52,14 @@ public class SortingController {
     SortResponse response = MergeSort.sort(request.getList());
     log.info("Completed sorting {} integers with merge sort in {} nanoseconds", request.getList().size(), response.getNanoDuration());
     return response;
+  }
+
+  @RequestMapping(method = RequestMethod.POST, value = "/quick")
+  @ResponseStatus(value = HttpStatus.OK)
+  public ResponseEntity<SortResponse> quick(@RequestBody SortRequest request) {
+    log.info("Sorting {} integers with quick sort", request.getList().size());
+    SortResponse response = QuickSort.sort(request.getList());
+    log.info("Completed sorting {} integers with quick sort in {} nanoseconds", request.getList().size(), response.getNanoDuration());
+    return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
   }
 }

@@ -1,6 +1,7 @@
 package com.josephbateh.dsa.api;
 
 import com.josephbateh.dsa.service.resources.SortRequest;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -64,6 +65,21 @@ class SortingApiTests extends BaseApiTest {
             .body(sortRequest)
             .when()
             .post(BASE_PATH.concat("/selection"))
+            .then()
+            .assertThat()
+            .statusCode(200)
+            .body("result", is(list));
+  }
+
+  @Test
+  @Disabled
+  void testQuickSortReturnsWithSortedValues() {
+    SortRequest sortRequest = new SortRequest(list);
+
+    given()
+            .body(sortRequest)
+            .when()
+            .post(BASE_PATH.concat("/quick"))
             .then()
             .assertThat()
             .statusCode(200)
