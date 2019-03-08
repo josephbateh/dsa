@@ -10,7 +10,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -56,10 +55,10 @@ public class SortingController {
 
   @RequestMapping(method = RequestMethod.POST, value = "/quick")
   @ResponseStatus(value = HttpStatus.OK)
-  public ResponseEntity<SortResponse> quick(@RequestBody SortRequest request) {
+  public SortResponse quick(@RequestBody SortRequest request) {
     log.info("Sorting {} integers with quick sort", request.getList().size());
     SortResponse response = QuickSort.sort(request.getList());
     log.info("Completed sorting {} integers with quick sort in {} nanoseconds", request.getList().size(), response.getNanoDuration());
-    return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+    return response;
   }
 }
