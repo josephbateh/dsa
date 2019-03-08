@@ -1,7 +1,6 @@
 package com.josephbateh.dsa.api;
 
 import com.josephbateh.dsa.service.resources.SortRequest;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -72,7 +71,6 @@ class SortingApiTests extends BaseApiTest {
   }
 
   @Test
-  @Disabled
   void testQuickSortReturnsWithSortedValues() {
     SortRequest sortRequest = new SortRequest(list);
 

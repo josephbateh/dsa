@@ -23,3 +23,7 @@ curl -X POST \
 	"list": [2, 3, 1]
 }'
 ```
+
+## Potential Improvements
+
+- Abstract the type of the List to allow for algorithms to be applied to any object that allows for comparison
