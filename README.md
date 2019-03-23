@@ -24,6 +24,8 @@ curl -X POST \
 }'
 ```
 
-## Potential Improvements
+## Potential New Features
 
 - Abstract the type of the List to allow for algorithms to be applied to any object that allows for comparison
+- Create docker image
+- Create pipeline instead of using Heroku
