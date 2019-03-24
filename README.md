@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/josephbateh/dsa.svg?branch=master)](https://travis-ci.org/josephbateh/dsa)
+
 # Data Structures & Algorithms
 
 Practice app for keeping up with data structures and algorithms.
