@@ -30,4 +30,5 @@ curl -X POST \
 
 - Abstract the type of the List to allow for algorithms to be applied to any object that allows for comparison
 - Create docker image
-- Create pipeline instead of using Heroku
+- Record sort durations to database and create dashboard
+- Record history of transactions and allow them to be queried
