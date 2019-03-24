@@ -1,6 +1,6 @@
 package com.josephbateh.dsa.unit;
 
-import com.josephbateh.dsa.domain.heap.MinHeap;
+import com.josephbateh.dsa.domain.structures.MinHeap;
 import com.josephbateh.dsa.helpers.RandomGenerator;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;

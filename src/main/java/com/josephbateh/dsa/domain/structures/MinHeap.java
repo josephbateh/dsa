@@ -1,4 +1,4 @@
-package com.josephbateh.dsa.domain.heap;
+package com.josephbateh.dsa.domain.structures;
 
 public class MinHeap {
   private static final int INITIAL_SIZE = 2;

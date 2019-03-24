@@ -19,7 +19,7 @@ A Postman collection with defined API calls can be found [here](https://www.getp
 cURL
 ```
 curl -X POST \
-  https://dsa-prod.herokuapp.com/sorting/bubble \
+  https://dsa-prod.herokuapp.com/sort/bubble \
   -H 'Content-Type: application/json' \
   -d '{
 	"list": [2, 3, 1]

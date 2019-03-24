@@ -1,9 +1,6 @@
 package com.josephbateh.dsa.service;
 
-import com.josephbateh.dsa.domain.sorting.BubbleSort;
-import com.josephbateh.dsa.domain.sorting.MergeSort;
-import com.josephbateh.dsa.domain.sorting.QuickSort;
-import com.josephbateh.dsa.domain.sorting.SelectionSort;
+import com.josephbateh.dsa.domain.sorting.*;
 import com.josephbateh.dsa.service.resources.SortRequest;
 import com.josephbateh.dsa.service.resources.SortResponse;
 import org.slf4j.Logger;
@@ -13,7 +10,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(value = "/sorting", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/sort", produces = MediaType.APPLICATION_JSON_VALUE)
 public class SortingController {
   protected static Logger log = LoggerFactory.getLogger(SortingController.class);
 
@@ -59,6 +56,15 @@ public class SortingController {
     log.info("Sorting {} integers with quick sort", request.getList().size());
     SortResponse response = QuickSort.sort(request.getList());
     log.info("Completed sorting {} integers with quick sort in {} nanoseconds", request.getList().size(), response.getNanoDuration());
+    return response;
+  }
+
+  @RequestMapping(method = RequestMethod.POST, value = "/heap")
+  @ResponseStatus(value = HttpStatus.OK)
+  public SortResponse heap(@RequestBody SortRequest request) {
+    log.info("Sorting {} integers with heap sort", request.getList().size());
+    SortResponse response = HeapSort.sort(request.getList());
+    log.info("Completed sorting {} integers with heap sort in {} nanoseconds", request.getList().size(), response.getNanoDuration());
     return response;
   }
 }

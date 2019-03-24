@@ -11,7 +11,7 @@ import static org.hamcrest.Matchers.is;
 
 
 class SortingApiTests extends BaseApiTest {
-  private static final String BASE_PATH = "/sorting";
+  private static final String BASE_PATH = "/sort";
   private List<Integer> list = Arrays.asList(-1, 0, 1);
 
   @Test
@@ -78,6 +78,20 @@ class SortingApiTests extends BaseApiTest {
             .body(sortRequest)
             .when()
             .post(BASE_PATH.concat("/quick"))
+            .then()
+            .assertThat()
+            .statusCode(200)
+            .body("result", is(list));
+  }
+
+  @Test
+  void testHeapSortReturnsWithSortedValues() {
+    SortRequest sortRequest = new SortRequest(list);
+
+    given()
+            .body(sortRequest)
+            .when()
+            .post(BASE_PATH.concat("/heap"))
             .then()
             .assertThat()
             .statusCode(200)
